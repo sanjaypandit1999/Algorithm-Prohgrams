@@ -32,4 +32,30 @@ public class AlgorithmMethods {
                     arr[j + 1] = temp;
                 }
     }
+    public boolean Anagram(String word1, String  word2) {
+        String[] wordArr1 = this.splitWord(word1);
+        String[] wordArr2 = this.splitWord(word2);
+
+        int lengthWord1 = wordArr1.length;
+        int lengthWord2 = wordArr2.length;
+
+        if (lengthWord1 != lengthWord2)
+            return false;
+
+        this.insertionSort(wordArr1);
+        this.insertionSort(wordArr2);
+
+        for (int i = 0; i < lengthWord1; i++)
+            if (wordArr1[i] != wordArr2[i])
+                return false;
+
+        return true;
+    }
+
+    private String[] splitWord(String word) {
+        char[] arr = new char[word.length()];
+        for (int i = 0; i < word.length(); i++)
+            arr[i] = word.charAt(i);
+        return arr;
+    }
 }
