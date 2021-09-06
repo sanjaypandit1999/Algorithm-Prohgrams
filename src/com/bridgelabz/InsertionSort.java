@@ -2,9 +2,9 @@ package com.bridgelabz;
 
 public class InsertionSort {
     public static void main(String[] args) {
-        String arr[] = {"sanjay", "Aviral", "Ramkrishna"};
+        int arr[] = {1,20,18,65};
         AlgorithmMethods insertionsort = new AlgorithmMethods();
-        insertionsort.insertionSort(arr);
+        insertionsort.bubbleSort(arr);
         insertionsort.display(arr);
     }
 
